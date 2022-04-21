@@ -1,4 +1,4 @@
-name: chocolatine.yml
+name: chocolatine
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2026/B-DOP-200-COT-2-1-chocolatine-fawaz.gomina.git
