@@ -16,7 +16,7 @@ jobs:
     name: files cleaner
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
         with:
           repository: 'git@github.com:EpitechPromo2026/B-DOP-200-COT-2-1-chocolatine-fawaz.gomina.git'
           fetch-depth: 0
@@ -41,7 +41,7 @@ jobs:
     container:
         image: epitechcontent/epitest-docker
     steps:
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
         with:
            repository: 'git@github.com:EpitechPromo2026/B-DOP-200-COT-2-1-chocolatine-fawaz.gomina.git'
       - run: make ./
@@ -55,7 +55,7 @@ jobs:
       container:
           image: epitechcontent/epitest-docker
       steps:
-        - uses: action/checkout@v3
+        - uses: actions/checkout@v3
         - run: make tests_run ./
         - timeout-minutes: 2
 
@@ -67,7 +67,7 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       needs: run_tests
       steps:
-        - uses: action/checkout@v2
+        - uses: actions/checkout@v2
           with:
             fetch-depth: 0
         - uses: pixta-dev/repository-mirroring-action@v1
